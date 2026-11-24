@@ -1,13 +1,203 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhany Vitória - Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhany Vitória - Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+  <!-- 01. CABEÇALHO -->
+  <header class="cabecalho">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">Seu Nome</a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><button id="btn-tema" class="btn-tema" aria-label="Alternar tema">🌙 Tema</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 02. INÍCIO (HERO) -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-texto">
+          <p class="saudacao">Olá, eu sou</p>
+          <h1>Seu Nome Completo</h1>
+          <h2>Desenvolvedor(a) Front-end</h2>
+          <p class="descricao">Construo interfaces web modernas, responsivas e focadas na experiência do usuário. Em busca da primeira oportunidade na área de tecnologia.</p>
+          <div class="hero-botoes">
+            <a href="#projetos" class="btn btn-primario">Ver projetos</a>
+            <a href="#contato" class="btn btn-secundario">Entrar em contato</a>
+          </div>
+        </div>
+        <div class="hero-imagem">
+          <img src="img/perfil.jpg" alt="Foto de perfil de Seu Nome sorrindo">
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. SOBRE MIM -->
+    <section id="sobre" class="secao fundo-alternativo">
+      <div class="container sobre-grid">
+        <div class="sobre-imagem">
+          <img src="img/perfil.jpg" alt="Imagem ilustrativa sobre minha trajetória">
+        </div>
+        <div class="sobre-conteudo">
+          <h2>Sobre mim</h2>
+          <p>Sou estudante de desenvolvimento web apaixonado(a) por transformar problemas reais em soluções digitais simples e eficientes. Gosto de entender como as coisas funcionam por baixo dos panos e aplicar boas práticas desde o código até o visual.</p>
+          <p>Atualmente, dedico meus estudos ao ecossistema web front-end, criando projetos práticos e versionando meu progresso no GitHub.</p>
+          <ul class="lista-info">
+            <li><strong>Localização:</strong> Goiânia / GO</li>
+            <li><strong>Formação:</strong> Curso de Desenvolvimento Web</li>
+            <li><strong>Interesses:</strong> UI Design, Programação, Jogos e Música</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. HABILIDADES -->
+    <section id="habilidades" class="secao">
+      <div class="container">
+        <h2>Habilidades</h2>
+        <p class="subtitulo">Linguagens, ferramentas e competências que domino e pratico.</p>
+        <div class="habilidades-grid">
+          <div class="card-habilidade">
+            <span>🌐</span>
+            <h3>HTML5</h3>
+          </div>
+          <div class="card-habilidade">
+            <span>🎨</span>
+            <h3>CSS3</h3>
+          </div>
+          <div class="card-habilidade">
+            <span>⚡</span>
+            <h3>JavaScript</h3>
+          </div>
+          <div class="card-habilidade">
+            <span>📱</span>
+            <h3>Responsividade</h3>
+          </div>
+          <div class="card-habilidade">
+            <span>🐙</span>
+            <h3>Git & GitHub</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. PROJETOS -->
+    <section id="projetos" class="secao fundo-alternativo">
+      <div class="container">
+        <h2>Projetos</h2>
+        <p class="subtitulo">Alguns dos trabalhos práticos que desenvolvi recentemente.</p>
+        <div class="projetos-grid">
+          
+          <article class="card-projeto">
+            <img src="img/projeto1.png" alt="Captura de tela do projeto Calculadora de IMC">
+            <div class="card-corpo">
+              <h3>Calculadora de IMC</h3>
+              <p>Aplicação interativa que calcula o Índice de Massa Corporal e exibe a classificação em tempo real. Aprendi manipulação do DOM e validação de inputs.</p>
+              <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+              </div>
+              <div class="card-links">
+                <a href="#" target="_blank" rel="noopener">Ver projeto ↗</a>
+                <a href="#" target="_blank" rel="noopener">Código ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-projeto">
+            <img src="img/projeto2.png" alt="Captura de tela do projeto Página de Produto">
+            <div class="card-corpo">
+              <h3>Landing Page Produto</h3>
+              <p>Página de apresentação responsiva criada para praticar layouts modernos com Flexbox e CSS Grid, adaptando-se perfeitamente a telas de celular.</p>
+              <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+              </div>
+              <div class="card-links">
+                <a href="#" target="_blank" rel="noopener">Ver projeto ↗</a>
+                <a href="#" target="_blank" rel="noopener">Código ↗</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-projeto">
+            <img src="img/projeto3.png" alt="Captura de tela do projeto Lista de Tarefas">
+            <div class="card-corpo">
+              <h3>Lista de Tarefas</h3>
+              <p>Gerenciador de tarefas diárias com opção de adicionar, concluir e excluir itens. Pratiquei eventos de clique, teclado e organização de código.</p>
+              <div class="tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JS</span>
+              </div>
+              <div class="card-links">
+                <a href="#" target="_blank" rel="noopener">Ver projeto ↗</a>
+                <a href="#" target="_blank" rel="noopener">Código ↗</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. CONTATO -->
+    <section id="contato" class="secao">
+      <div class="container contato-grid">
+        <div class="contato-info">
+          <h2>Vamos conversar?</h2>
+          <p>Estou aberto(a) a oportunidades de estágio, projetos freelance ou troca de experiências na área de desenvolvimento.</p>
+          <ul class="lista-contato">
+            <li><strong>E-mail:</strong> seuemail@exemplo.com</li>
+            <li><strong>LinkedIn:</strong> <a href="#" target="_blank" rel="noopener">linkedin.com/in/seu-perfil</a></li>
+            <li><strong>GitHub:</strong> <a href="#" target="_blank" rel="noopener">github.com/seu-usuario</a></li>
+          </ul>
+        </div>
+
+        <form id="form-contato" class="form-contato">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Escreva sua mensagem aqui..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primario">Enviar mensagem</button>
+          <p id="feedback-form" class="feedback-oculto" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 07. RODAPÉ -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <p>&copy; 2026 Seu Nome. Feito com HTML, CSS e JavaScript.</p>
+      <a href="#inicio" class="voltar-topo">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
