@@ -1,0 +1,544 @@
+:root {
+  --bg-principal: #0d0d0d;
+  --bg-secundario: #1a1a1a;
+  --texto-principal: #f0f0f0;
+  --texto-secundario: #a0a0a0;
+  --borda: #ffffff;
+  --card-bg: #121212;
+  
+  --cor-tv-brilho: #ffffff;
+  --cor-tv-sombra: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Efeito de Scanlines de TV Antiga sobrepondo a tela */
+body::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 999;
+  background-size: 100% 3px, 3px 100%;
+  pointer-events: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background-color: var(--bg-principal);
+  border-bottom: 2px dashed var(--borda);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 70px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: var(--texto-principal);
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 0px #555;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--texto-secundario);
+  font-weight: bold;
+  font-size: 1.05rem;
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: var(--cor-tv-brilho);
+  text-shadow: 0 0 6px #fff;
+}
+
+/* Seções Gerais */
+.secao {
+  padding: 72px 0;
+  border-bottom: 1px solid #222;
+}
+
+.fundo-alternativo {
+  background-color: var(--bg-secundario);
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  border-bottom: 2px solid var(--borda);
+  display: inline-block;
+  padding-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  color: var(--texto-secundario);
+  margin-bottom: 36px;
+}
+
+/* Animação de Falta de Sinal (Sintonia de TV ao Clicar) */
+@keyframes tv-falta-de-sinal {
+  0% {
+    transform: translate(0, 0);
+    filter: brightness(1) contrast(1);
+  }
+  10% {
+    transform: translate(-4px, 2px);
+    filter: brightness(2) contrast(3) grayscale(100%);
+  }
+  20% {
+    transform: translate(4px, -2px);
+    filter: brightness(0.2) contrast(4);
+  }
+  30% {
+    transform: translate(-2px, -2px);
+    filter: brightness(1.5) blur(1px);
+  }
+  40% {
+    transform: translate(3px, 1px);
+    filter: brightness(0.5) contrast(2);
+  }
+  50% {
+    transform: translate(-1px, 3px);
+    filter: brightness(3) contrast(5);
+  }
+  70% {
+    transform: translate(2px, -1px);
+    filter: brightness(0.8) contrast(1);
+  }
+  100% {
+    transform: translate(0, 0);
+    filter: brightness(1) contrast(1);
+  }
+}
+
+/* Botões com efeito estático de TV ao clicar */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 0px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid var(--borda);
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  transition: background 0.1s, color 0.1s;
+}
+
+.btn:active {
+  animation: tv-falta-de-sinal 0.35s steps(2, end) forwards;
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+.btn-primario {
+  background-color: var(--borda);
+  color: #000;
+}
+
+.btn-primario:hover {
+  background-color: #000;
+  color: #fff;
+  box-shadow: 0 0 10px #fff;
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--borda);
+}
+
+.btn-secundario:hover {
+  background-color: var(--borda);
+  color: #000;
+}
+
+/* 02. Hero */
+.hero {
+  padding: 80px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.saudacao {
+  color: var(--texto-secundario);
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  text-shadow: 3px 3px 0px #333;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  color: var(--texto-secundario);
+  font-weight: normal;
+  margin-bottom: 16px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.hero .descricao {
+  color: var(--texto-secundario);
+  margin-bottom: 28px;
+  max-width: 540px;
+  font-size: 1.1rem;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-imagem img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 0%;
+  border: 4px double var(--borda);
+  display: block;
+  margin: 0 auto;
+  filter: grayscale(100%) contrast(120%);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 03. Sobre mim */
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.sobre-imagem img {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 0px;
+  border: 2px solid var(--borda);
+  display: block;
+  filter: grayscale(100%) contrast(120%);
+}
+
+.sobre-conteudo p {
+  color: var(--texto-secundario);
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.lista-info {
+  list-style: none;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* 04. Habilidades */
+.habilidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.card-habilidade {
+  background-color: var(--card-bg);
+  border: 2px solid var(--borda);
+  border-radius: 0px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card-habilidade:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.03);
+}
+
+.card-habilidade h3 {
+  font-size: 1.1rem;
+}
+
+/* 05. Projetos */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.card-projeto {
+  background-color: var(--card-bg);
+  border: 2px solid var(--borda);
+  border-radius: 0px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-projeto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--borda);
+  filter: grayscale(100%) contrast(120%);
+}
+
+.card-corpo {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-corpo h3 {
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.card-corpo p {
+  color: var(--texto-secundario);
+  font-size: 1rem;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.tags span {
+  background-color: var(--bg-secundario);
+  border: 1px solid var(--borda);
+  font-size: 0.85rem;
+  padding: 2px 8px;
+  border-radius: 0px;
+  font-weight: bold;
+}
+
+.card-links {
+  display: flex;
+  gap: 16px;
+}
+
+.card-links a {
+  color: var(--borda);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 1px dashed var(--borda);
+}
+
+.card-links a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* 06. Contato */
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.lista-contato {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-contato {
+  background-color: var(--card-bg);
+  border: 2px solid var(--borda);
+  padding: 28px;
+  border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.campo label {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.campo input,
+.campo textarea {
+  padding: 10px 12px;
+  border: 2px solid var(--borda);
+  border-radius: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  outline: none;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  background-color: #fff;
+  color: #000;
+}
+
+.feedback-oculto {
+  display: none;
+}
+
+.feedback-visivel {
+  display: block;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 0px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px dashed #000;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+/* 07. Rodapé */
+.rodape {
+  background-color: var(--bg-principal);
+  color: var(--borda);
+  padding: 28px 0;
+  border-top: 2px dashed var(--borda);
+}
+
+.rodape-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.voltar-topo {
+  color: var(--borda);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px dashed var(--borda);
+}
+
+.voltar-topo:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* PARTE B - Responsividade (Tela estreita / 375px) */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    padding: 12px 20px;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero-grid,
+  .sobre-grid,
+  .contato-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .hero-botoes {
+    justify-content: center;
+  }
+
+  .hero-imagem {
+    order: -1;
+  }
+
+  .hero-imagem img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .sobre-imagem img {
+    margin: 0 auto;
+  }
+
+  .lista-info,
+  .lista-contato {
+    text-align: left;
+  }
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
+  }
+}

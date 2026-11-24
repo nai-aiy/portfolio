@@ -1,13 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rhany Vitória - Portfólio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio | Rhany Vitória</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+  <!-- 01. CABEÇALHO -->
+  <header class="cabecalho">
+    <div class="container nav-container">
+      <a href="#inicio" class="logo">Rhany Vitória</a>
+      <nav aria-label="Navegação principal">
+        <ul class="menu">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 02. INÍCIO (HERO) -->
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-texto">
+          <p class="saudacao">Olá, eu sou</p>
+          <h1>Rhany Vitória</h1>
+          <h2>Técnico em Desenvolvimento em Sistemas</h2>
+          <p class="descricao">Expandindo conhecimentos em software e hardware, com grande interesse em seguir na cibersegurança.</p>
+          <div class="hero-botoes">
+            <a href="#projetos" class="btn btn-primario">Ver projetos</a>
+            <a href="#contato" class="btn btn-secundario">Entrar em contato</a>
+          </div>
+        </div>
+        <div class="hero-imagem">
+          <img src="img/perfil-inicio.jpeg" alt="Foto de Rhany Vitória no início do site">
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. SOBRE MIM -->
+    <section id="sobre" class="secao fundo-alternativo">
+      <div class="container sobre-grid">
+        <div class="sobre-imagem">
+          <img src="img/perfil-sobre.jpeg" alt="Foto de Rhany Vitória na seção sobre mim">
+        </div>
+        <div class="sobre-conteudo">
+          <h2>Sobre mim</h2>
+          <p>Busco expandir os meus conhecimentos quanto a área da TI para poder evoluir as minhas habilidades, seja com software ou hardware. Tenho interesse em seguir na cibersegurança.</p>
+          <p>Estou em constante aprendizado, desenvolvendo soluções práticas e seguras para o ambiente digital.</p>
+          <ul class="lista-info">
+            <li><strong>Área:</strong> Desenvolvimento de Sistemas e Cibersegurança</li>
+            <li><strong>Foco:</strong> Software e Hardware</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. HABILIDADES -->
+    <section id="habilidades" class="secao">
+      <div class="container">
+        <h2>Habilidades</h2>
+        <p class="subtitulo">Linguagens e tecnologias que domino e pratico.</p>
+        <div class="habilidades-grid">
+          <div class="card-habilidade">
+            <h3>HTML</h3>
+          </div>
+          <div class="card-habilidade">
+            <h3>Python</h3>
+          </div>
+          <div class="card-habilidade">
+            <h3>IoT</h3>
+          </div>
+          <div class="card-habilidade">
+            <h3>JavaScript</h3>
+          </div>
+          <div class="card-habilidade">
+            <h3>C++</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. PROJETOS -->
+    <section id="projetos" class="secao fundo-alternativo">
+      <div class="container">
+        <h2>Projetos</h2>
+        <p class="subtitulo">Trabalhos desenvolvidos com foco em utilidade prática.</p>
+        <div class="projetos-grid">
+          
+          <article class="card-projeto">
+            <img src="img/projeto1.jpeg" alt="Captura de tela do sistema de recepção para petshops">
+            <div class="card-corpo">
+              <h3>Sistema para Petshops</h3>
+              <p>Site direcionado à recepção de petshops para ajudar os recepcionistas, a gerência e, principalmente, os clientes, otimizando o atendimento.</p>
+              <div class="tags">
+                <span>Python</span>
+                <span>Flet</span>
+              </div>
+              <div class="card-links">
+                <a href="#" target="_blank" rel="noopener">Ver projeto</a>
+                <a href="#" target="_blank" rel="noopener">Código</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. CONTATO -->
+    <section id="contato" class="secao">
+      <div class="container contato-grid">
+        <div class="contato-info">
+          <h2>Vamos conversar?</h2>
+          <p>Entre em contato para oportunidades na área de tecnologia, parcerias ou projetos.</p>
+          <ul class="lista-contato">
+            <li><strong>E-mail:</strong> rhyssenai@gmail.com</li>
+          </ul>
+        </div>
+
+        <form id="form-contato" class="form-contato">
+          <div class="campo">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+          </div>
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+          </div>
+          <div class="campo">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required placeholder="Escreva sua mensagem aqui..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primario">Enviar mensagem</button>
+          <p id="feedback-form" class="feedback-oculto" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- 07. RODAPÉ -->
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <p>&copy; 2026 Rhany Vitória. Todos os direitos reservados.</p>
+      <a href="#inicio" class="voltar-topo">Voltar ao topo</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
