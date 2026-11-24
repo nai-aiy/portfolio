@@ -1,23 +1,12 @@
 :root {
   --bg-principal: #ffffff;
-  --bg-secundario: #f1f5f9;
-  --texto-principal: #0f172a;
-  --texto-secundario: #475569;
-  --cor-destaque: #2563eb;
-  --cor-destaque-hover: #1d4ed8;
-  --borda: #cbd5e1;
+  --bg-secundario: #f3effc; /* Lavanda muito suave */
+  --texto-principal: #2d2b38;
+  --texto-secundario: #5a5568;
+  --cor-destaque: #8a63d2; /* Tom lavanda forte */
+  --cor-destaque-hover: #734bc4;
+  --borda: #d8cceb;
   --card-bg: #ffffff;
-}
-
-body.tema-escuro {
-  --bg-principal: #0f172a;
-  --bg-secundario: #1e293b;
-  --texto-principal: #f8fafc;
-  --texto-secundario: #cbd5e1;
-  --cor-destaque: #3b82f6;
-  --cor-destaque-hover: #60a5fa;
-  --borda: #334155;
-  --card-bg: #1e293b;
 }
 
 * {
@@ -31,11 +20,10 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   background-color: var(--bg-principal);
   color: var(--texto-principal);
   line-height: 1.6;
-  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -59,12 +47,10 @@ body {
   justify-content: space-between;
   align-items: center;
   min-height: 70px;
-  flex-wrap: wrap;
-  gap: 12px;
 }
 
 .logo {
-  font-weight: 700;
+  font-weight: bold;
   font-size: 1.2rem;
   color: var(--texto-principal);
   text-decoration: none;
@@ -73,34 +59,20 @@ body {
 .menu {
   list-style: none;
   display: flex;
-  align-items: center;
   gap: 20px;
-  flex-wrap: wrap;
 }
 
 .menu a {
   text-decoration: none;
   color: var(--texto-secundario);
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: bold;
 }
 
 .menu a:hover {
   color: var(--cor-destaque);
 }
 
-.btn-tema {
-  background: var(--bg-secundario);
-  color: var(--texto-principal);
-  border: 1px solid var(--borda);
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-family: inherit;
-  font-weight: 600;
-}
-
-/* Seções Gerais */
+/* Seções */
 .secao {
   padding: 72px 0;
 }
@@ -123,12 +95,11 @@ h2 {
 .btn {
   display: inline-block;
   padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
+  border-radius: 6px;
+  font-weight: bold;
   text-decoration: none;
   cursor: pointer;
   border: none;
-  font-size: 1rem;
 }
 
 .btn-primario {
@@ -146,7 +117,7 @@ h2 {
   border: 1px solid var(--borda);
 }
 
-/* 02. Hero */
+/* Hero */
 .hero {
   padding: 80px 0;
 }
@@ -160,38 +131,35 @@ h2 {
 
 .saudacao {
   color: var(--cor-destaque);
-  font-weight: 600;
+  font-weight: bold;
   margin-bottom: 8px;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
-  line-height: 1.15;
+  font-size: 2.5rem;
+  line-height: 1.2;
   margin-bottom: 8px;
 }
 
 .hero h2 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--texto-secundario);
-  font-weight: 600;
   margin-bottom: 16px;
 }
 
 .hero .descricao {
   color: var(--texto-secundario);
-  margin-bottom: 28px;
-  max-width: 540px;
+  margin-bottom: 24px;
 }
 
 .hero-botoes {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
 }
 
 .hero-imagem img {
-  width: 260px;
-  height: 260px;
+  width: 240px;
+  height: 240px;
   object-fit: cover;
   border-radius: 50%;
   border: 4px solid var(--cor-destaque);
@@ -199,7 +167,7 @@ h2 {
   margin: 0 auto;
 }
 
-/* 03. Sobre mim */
+/* Sobre */
 .sobre-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -209,8 +177,8 @@ h2 {
 
 .sobre-imagem img {
   width: 100%;
-  max-width: 340px;
-  border-radius: 12px;
+  max-width: 320px;
+  border-radius: 8px;
   display: block;
 }
 
@@ -221,13 +189,13 @@ h2 {
 
 .lista-info {
   list-style: none;
-  margin-top: 20px;
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
-/* 04. Habilidades */
+/* Habilidades */
 .habilidades-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -237,22 +205,23 @@ h2 {
 .card-habilidade {
   background-color: var(--card-bg);
   border: 1px solid var(--borda);
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 24px 16px;
   text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.card-habilidade span {
-  font-size: 2rem;
-  display: block;
-  margin-bottom: 8px;
+/* Interação Animada: Efeito de zoom no card ao passar o mouse */
+.card-habilidade:hover {
+  transform: translateY(-5px);
+  border-color: var(--cor-destaque);
 }
 
 .card-habilidade h3 {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
-/* 05. Projetos */
+/* Projetos */
 .projetos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -262,7 +231,7 @@ h2 {
 .card-projeto {
   background-color: var(--card-bg);
   border: 1px solid var(--borda);
-  border-radius: 12px;
+  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -272,7 +241,7 @@ h2 {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  background-color: #cbd5e1;
+  background-color: #d8cceb;
 }
 
 .card-corpo {
@@ -303,10 +272,9 @@ h2 {
 .tags span {
   background-color: var(--bg-secundario);
   border: 1px solid var(--borda);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 20px;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
 
 .card-links {
@@ -316,12 +284,11 @@ h2 {
 
 .card-links a {
   color: var(--cor-destaque);
-  font-weight: 600;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 0.9rem;
 }
 
-/* 06. Contato */
+/* Contato */
 .contato-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -330,22 +297,14 @@ h2 {
 
 .lista-contato {
   list-style: none;
-  margin-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.lista-contato a {
-  color: var(--cor-destaque);
-  text-decoration: none;
+  margin-top: 16px;
 }
 
 .form-contato {
   background-color: var(--card-bg);
   border: 1px solid var(--borda);
-  padding: 28px;
-  border-radius: 12px;
+  padding: 24px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -358,17 +317,15 @@ h2 {
 }
 
 .campo label {
-  font-weight: 600;
-  font-size: 0.95rem;
+  font-weight: bold;
 }
 
 .campo input,
 .campo textarea {
-  padding: 10px 12px;
+  padding: 10px;
   border: 1px solid var(--borda);
-  border-radius: 6px;
+  border-radius: 4px;
   font-family: inherit;
-  font-size: 1rem;
   background-color: var(--bg-principal);
   color: var(--texto-principal);
 }
@@ -381,80 +338,53 @@ h2 {
   display: block;
   margin-top: 8px;
   padding: 10px;
-  border-radius: 6px;
-  background-color: #dcfce7;
-  color: #166534;
-  font-weight: 600;
-  font-size: 0.9rem;
+  border-radius: 4px;
+  background-color: #e6f4ea;
+  color: #137333;
+  font-weight: bold;
 }
 
-/* 07. Rodapé */
+/* Rodapé */
 .rodape {
-  background-color: #0f172a;
-  color: #f8fafc;
-  padding: 28px 0;
+  background-color: #2d2b38;
+  color: #ffffff;
+  padding: 24px 0;
 }
 
 .rodape-conteudo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
 }
 
 .voltar-topo {
-  color: #93c5fd;
+  color: #d8cceb;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: bold;
 }
 
-/* PARTE B - Responsividade (Tela estreita / 375px) */
+/* Responsividade mobile (375px) */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
-    padding: 12px 20px;
+    padding: 12px 0;
   }
-
-  .menu {
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .hero-grid,
-  .sobre-grid,
-  .contato-grid {
+  .hero-grid, .sobre-grid, .contato-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
-
-  .hero h1 {
-    font-size: 2.1rem;
-  }
-
   .hero-botoes {
     justify-content: center;
   }
-
   .hero-imagem {
     order: -1;
   }
-
-  .hero-imagem img {
-    width: 190px;
-    height: 190px;
-  }
-
-  .sobre-imagem img {
-    margin: 0 auto;
-  }
-
-  .lista-info,
-  .lista-contato {
+  .lista-info {
     text-align: left;
   }
-
-  .projetos-grid {
-    grid-template-columns: 1fr;
+  .rodape-conteudo {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
   }
 }
