@@ -1,11 +1,11 @@
 :root {
   --bg-principal: #ffffff;
-  --bg-secundario: #f3effc; /* Lavanda muito suave */
-  --texto-principal: #2d2b38;
-  --texto-secundario: #5a5568;
-  --cor-destaque: #8a63d2; /* Tom lavanda forte */
-  --cor-destaque-hover: #734bc4;
-  --borda: #d8cceb;
+  --bg-secundario: #f4f2f8; /* Tom suave derivado do lavanda */
+  --texto-principal: #2b2b2b;
+  --texto-secundario: #555555;
+  --cor-destaque: #9683ec; /* Tom de lavanda mais forte para destaque */
+  --cor-destaque-hover: #7d68dc;
+  --borda: #dcd6f7;        /* Borda cor lavanda clara */
   --card-bg: #ffffff;
 }
 
@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   background-color: var(--bg-principal);
   color: var(--texto-principal);
   line-height: 1.6;
@@ -47,11 +47,13 @@ body {
   justify-content: space-between;
   align-items: center;
   min-height: 70px;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .logo {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--texto-principal);
   text-decoration: none;
 }
@@ -59,20 +61,24 @@ body {
 .menu {
   list-style: none;
   display: flex;
+  align-items: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .menu a {
   text-decoration: none;
   color: var(--texto-secundario);
   font-weight: bold;
+  font-size: 1.05rem;
+  transition: color 0.2s ease;
 }
 
 .menu a:hover {
   color: var(--cor-destaque);
 }
 
-/* Seções */
+/* Seções Gerais */
 .secao {
   padding: 72px 0;
 }
@@ -82,7 +88,7 @@ body {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 12px;
 }
 
@@ -100,6 +106,13 @@ h2 {
   text-decoration: none;
   cursor: pointer;
   border: none;
+  font-size: 1rem;
+  font-family: 'Times New Roman', Times, serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn-primario {
@@ -117,7 +130,7 @@ h2 {
   border: 1px solid var(--borda);
 }
 
-/* Hero */
+/* 02. Hero */
 .hero {
   padding: 80px 0;
 }
@@ -136,38 +149,42 @@ h2 {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
+  font-size: 3rem;
+  line-height: 1.15;
   margin-bottom: 8px;
 }
 
 .hero h2 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   color: var(--texto-secundario);
+  font-weight: normal;
   margin-bottom: 16px;
 }
 
 .hero .descricao {
   color: var(--texto-secundario);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  max-width: 540px;
+  font-size: 1.1rem;
 }
 
 .hero-botoes {
   display: flex;
   gap: 12px;
+  flex-wrap: wrap;
 }
 
 .hero-imagem img {
-  width: 240px;
-  height: 240px;
+  width: 260px;
+  height: 260px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid var(--cor-destaque);
+  border: 4px solid var(--borda);
   display: block;
   margin: 0 auto;
 }
 
-/* Sobre */
+/* 03. Sobre mim */
 .sobre-grid {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -177,7 +194,7 @@ h2 {
 
 .sobre-imagem img {
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
   border-radius: 8px;
   display: block;
 }
@@ -185,17 +202,18 @@ h2 {
 .sobre-conteudo p {
   color: var(--texto-secundario);
   margin-bottom: 16px;
+  font-size: 1.1rem;
 }
 
 .lista-info {
   list-style: none;
-  margin-top: 16px;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
-/* Habilidades */
+/* 04. Habilidades (Com animação de transição) */
 .habilidades-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -208,20 +226,20 @@ h2 {
   border-radius: 8px;
   padding: 24px 16px;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-/* Interação Animada: Efeito de zoom no card ao passar o mouse */
 .card-habilidade:hover {
   transform: translateY(-5px);
-  border-color: var(--cor-destaque);
+  box-shadow: 0 6px 15px rgba(150, 131, 236, 0.2);
+  background-color: #faf8ff;
 }
 
 .card-habilidade h3 {
   font-size: 1.1rem;
 }
 
-/* Projetos */
+/* 05. Projetos */
 .projetos-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -235,13 +253,19 @@ h2 {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-projeto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(150, 131, 236, 0.2);
 }
 
 .card-projeto img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  background-color: #d8cceb;
+  background-color: #e6e6fa;
 }
 
 .card-corpo {
@@ -253,11 +277,12 @@ h2 {
 
 .card-corpo h3 {
   margin-bottom: 8px;
+  font-size: 1.3rem;
 }
 
 .card-corpo p {
   color: var(--texto-secundario);
-  font-size: 0.95rem;
+  font-size: 1rem;
   margin-bottom: 16px;
   flex-grow: 1;
 }
@@ -273,8 +298,8 @@ h2 {
   background-color: var(--bg-secundario);
   border: 1px solid var(--borda);
   font-size: 0.85rem;
-  padding: 4px 8px;
-  border-radius: 4px;
+  padding: 4px 10px;
+  border-radius: 12px;
 }
 
 .card-links {
@@ -286,9 +311,10 @@ h2 {
   color: var(--cor-destaque);
   font-weight: bold;
   text-decoration: none;
+  font-size: 0.95rem;
 }
 
-/* Contato */
+/* 06. Contato */
 .contato-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -297,13 +323,16 @@ h2 {
 
 .lista-contato {
   list-style: none;
-  margin-top: 16px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .form-contato {
   background-color: var(--card-bg);
   border: 1px solid var(--borda);
-  padding: 24px;
+  padding: 28px;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -318,14 +347,16 @@ h2 {
 
 .campo label {
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .campo input,
 .campo textarea {
-  padding: 10px;
+  padding: 10px 12px;
   border: 1px solid var(--borda);
-  border-radius: 4px;
-  font-family: inherit;
+  border-radius: 6px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
   background-color: var(--bg-principal);
   color: var(--texto-principal);
 }
@@ -338,53 +369,80 @@ h2 {
   display: block;
   margin-top: 8px;
   padding: 10px;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #e6f4ea;
   color: #137333;
   font-weight: bold;
+  font-size: 0.95rem;
 }
 
-/* Rodapé */
+/* 07. Rodapé */
 .rodape {
-  background-color: #2d2b38;
+  background-color: #2b2b2b;
   color: #ffffff;
-  padding: 24px 0;
+  padding: 28px 0;
 }
 
 .rodape-conteudo {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .voltar-topo {
-  color: #d8cceb;
+  color: #dcd6f7;
   text-decoration: none;
   font-weight: bold;
 }
 
-/* Responsividade mobile (375px) */
+/* PARTE B - Responsividade (Tela estreita / 375px) */
 @media (max-width: 768px) {
   .nav-container {
     flex-direction: column;
-    padding: 12px 0;
+    padding: 12px 20px;
   }
-  .hero-grid, .sobre-grid, .contato-grid {
+
+  .menu {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hero-grid,
+  .sobre-grid,
+  .contato-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
   .hero-botoes {
     justify-content: center;
   }
+
   .hero-imagem {
     order: -1;
   }
-  .lista-info {
+
+  .hero-imagem img {
+    width: 190px;
+    height: 190px;
+  }
+
+  .sobre-imagem img {
+    margin: 0 auto;
+  }
+
+  .lista-info,
+  .lista-contato {
     text-align: left;
   }
-  .rodape-conteudo {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
+
+  .projetos-grid {
+    grid-template-columns: 1fr;
   }
 }
