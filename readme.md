@@ -15,3 +15,5 @@ Apresentar minha trajetória como técnica em Desenvolvimento em Sistemas, desta
 1. Clone este repositório ou faça o download dos arquivos em formato ZIP.
 2. Certifique-se de que a estrutura de pastas está correta (com a pasta `img` contendo as imagens necessárias).
 3. Dê um duplo clique no arquivo `index.html` para abri-lo diretamente em qualquer navegador web moderno.
+
+Site: (em breve)
